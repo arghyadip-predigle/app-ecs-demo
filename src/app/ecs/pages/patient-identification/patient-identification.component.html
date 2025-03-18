@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="content">
+<div class="content-form" *ngIf="!isVerifiedPatient">
     <div class="header">
         <h2>Patient Identification</h2>
         <p>We need some basic information so that we know who you are!</p>
@@ -17,8 +17,8 @@
                 <input type="text" id="lastname" name="username" placeholder="Enter Last Name" formControlName="lastname" required>
             </div>
             <div class="form-group">
-                <label for="username">Location</label>
-                <input type="text" id="location" name="username" placeholder="Enter Location" formControlName="location" required>
+                <label for="username">Address</label>
+                <input type="text" id="address" name="username" placeholder="Enter Address" formControlName="address" required>
             </div>
             <div class="form-group">
                 <label for="username">DOB</label>
@@ -79,7 +79,20 @@
           </label>
         </div>
       </div>
-    <button class="verify"> Verify </button>
+    <button class="verify" [disabled]="!isVerifyEnabled" (click)="verify()"> Verify </button>
+
+</div>
+
+<div class="onboarded-user" *ngIf="isVerifiedPatient">
+  <div class="content">
+    <div class="correct-icon"><img src="./assets/images/onboarded_icon.png" alt=""></div>
+  <div class="header">Already Onboarded!</div>
+  <div class="text">You're already connected with FreseniusRxnal Care! No further steps are needed. If you need assistance, please check with the clinic staff.</div>
+  <div class="connect-button"><button>Connect with Clinic Staff</button></div>
+  <div class="link"><img src="./assets/images/redirect-icon.png" alt="">  View Policy</div>
+  </div>
+  
+
 </div>
 
 <!-- [class.invalid]="patientForm.get('fileUpload')?.invalid && patientForm.get('fileUpload')?.touched" -->
