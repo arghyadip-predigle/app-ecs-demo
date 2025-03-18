@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<div class="welcome-body">
+    <img src="assets/images/welcome.png" alt="Welcome Image" class="welcome-image">
+    <h4>Welcome to</h4>
+    <h2>FreseniusRx</h2>
+    <p class="welcome-text">
+        Thank you for choosing us! <br> <br>
+        This portal simplifies onboarding, connecting you securely with your clinic to manage treatment and receive personalised support. <br> <br>
+        Quickly find and connect with your clinic using the search below.
+    </p>
+    <mat-checkbox class="check-box" [(ngModel)]="checkbox1" (change)="updateButtonState()" color="primary">I agree to change my pharmacy to FreseniusRx</mat-checkbox>
+    <mat-checkbox class="check-box" [(ngModel)]="checkbox2" (change)="updateButtonState()" color="primary">I consent to the request for my medication history. I understand that this system is monitored, and all requests are recorded.</mat-checkbox>
+
+    <!-- <div class="search-container">
+      <input type="text" placeholder="Search ECS..." class="search-input" (keyup.enter)="search($event)">
+      <span class="search-icon"></span>
+      <button class="search-button" (click)="search($event)">Search</button>
+    </div> -->
+    <!-- <div class="location">
+      <span class="location-icon"></span>
+      <p class="location-text">Use My Location</p>
+    </div> -->
+    <button 
+    class="enabled-button" 
+    [disabled]="!isButtonEnabled"
+    (click)="redirectTo()">
+      Continue
+    </button>
+  </div>

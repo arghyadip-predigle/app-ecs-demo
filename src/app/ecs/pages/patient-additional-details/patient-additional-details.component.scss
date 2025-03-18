@@ -1,0 +1,123 @@
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 21%;
+
+    .back {
+        display: flex;
+        color: rgb(51, 64, 83);
+        padding-bottom: 1rem;
+        font-size: 16px;
+        gap: 0.7rem;
+        font-weight: 600;
+        cursor: pointer;
+
+    }
+
+    .header {
+        margin-bottom: 1.5rem;
+
+        h2 {
+            color: rgba(11, 16, 26, 1);
+            font-weight: 600;
+            size: 20px;
+            line-height: 20px;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: rgba(71, 84, 102, 1);
+            size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    .info-banner {
+        height: 3.5rem;
+        background-color: rgba(222, 241, 255, 1);
+        width: 76%;
+        border: 1px solid rgba(150, 185, 250, 1);
+        border-radius: 6px;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .info-success {
+            background-color: rgba(43, 80, 230, 1);
+            ;
+            border-radius: 50%;
+            border: none;
+            width: 1.2rem;
+            height: 1.2rem;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+    }
+
+    .info-card-wrapper {
+        // border: 1px solid black;
+        width: 76%;
+        height: 13rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding-top: 1rem;
+
+        .info-card {
+            width: 48%;
+            border: 1px solid rgba(208, 213, 221, 1);
+            height: 10rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+
+            .card-icon {
+                padding-bottom: 0.8rem;
+            }
+
+            .card-header {
+                font-size: 20px;
+                font-weight: 600;
+                padding: 0.3rem;
+                color: rgba(11, 16, 26, 1);
+            }
+
+            .card-desc {
+                color: rgba(102, 112, 132, 1);
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+
+    }
+
+    @media (max-width: 768px) {
+        .info-card-wrapper {
+          flex-direction: column; /* Stack cards vertically */
+          width: 100%; /* Full width on mobile */
+          height: auto; /* Allow height to adjust based on content */
+          padding: 1rem; /* Consistent padding */
+          gap: 1rem; /* Reduce gap slightly for mobile */
+        }
+      
+        .info-card {
+          width: 100%; /* Full width for each card */
+          height: auto; /* Adjust height dynamically */
+          padding: 1rem; /* Add some internal padding for better spacing */
+        }
+      
+        .card-header {
+          font-size: 18px; /* Slightly smaller font for mobile */
+        }
+      
+        .card-desc {
+          font-size: 11px; /* Slightly smaller font for mobile */
+        }
+      }
+}

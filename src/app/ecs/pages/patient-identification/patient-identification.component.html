@@ -1,0 +1,86 @@
+<app-navbar></app-navbar>
+<div class="content">
+    <div class="header">
+        <h2>Patient Identification</h2>
+        <p>We need some basic information so that we know who you are!</p>
+    </div>
+    <div class="info-banner"> <span class="info-success">i</span>Please enter three details to proceed with verification.(0/3)</div>
+    <div class="form-body">
+        
+        <form class="form-container" [formGroup]="userForm">
+            <div class="form-group">
+                <label for="username">First Name</label>
+                <input type="text" id="firstname" name="username" placeholder="Enter First Name" formControlName="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Last Name</label>
+                <input type="text" id="lastname" name="username" placeholder="Enter Last Name" formControlName="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Location</label>
+                <input type="text" id="location" name="username" placeholder="Enter Location" formControlName="location" required>
+            </div>
+            <div class="form-group">
+                <label for="username">DOB</label>
+                <input type="text" id="dob" name="username" placeholder="Enter DOB" formControlName="dob" required>
+            </div>
+        </form>
+    </div>
+
+    <div class="devider">
+        <hr>
+        <p>(OR)</p>
+        <hr>
+    </div>
+
+    <div class="file-type-dropdown">
+        <!-- <label for="document-type">Document Type</label>
+        <select
+          class="dropdown"
+        >
+            <option value="" disabled selected>Document File Type</option>
+          <option *ngFor="let option of fileUploadType" [value]="option">
+            {{ option }}
+          </option>
+        </select> -->
+          
+    </div>
+    <!-- <mat-form-field>
+        <mat-label>Cars</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </mat-form-field> -->
+    
+    <div class="upload-section">
+        <div class="upload-box">
+          <input
+            type="file"
+            id="file-upload"
+            hidden
+            (change)="onFileSelected($event)"
+          />
+          <label for="file-upload">
+            <div>
+              <img
+                class="upload-icon"
+                src="./assets/images/id-card.png"
+                alt="upload"
+              />
+            </div>
+            <p class="drag-text">
+              <span class="click-style">Click to upload</span> or drag and drop
+            </p>
+            <p class="type-text">Minimum Resolution <strong>700px</strong></p>
+            <button class="upload-button">Upload</button>
+          </label>
+        </div>
+      </div>
+    <button class="verify"> Verify </button>
+</div>
+
+<!-- [class.invalid]="patientForm.get('fileUpload')?.invalid && patientForm.get('fileUpload')?.touched" -->
+
